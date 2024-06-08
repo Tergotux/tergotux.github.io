@@ -21,15 +21,50 @@
 	</nav>
 	<main role="main">
 		
-		<div class="slider-container">
-			<div class="slider">
-				<img src="images/about.jpg" alt="">
-				<img src="images/revolution-logo.png" alt="">
-				<img src="photo_2024-06-04_22-04-39.jpg" alt="">
-			</div>
-			<button class="prev-button" aria-label="Посмотреть предыдущий слайд">&lt;</button>
-			<button class="next-button" aria-label="Посмотреть следующий слайд">&gt</button>
-	        </div>
+		<div class="slideshow-container">
+	
+		<div class="mySlides fade">
+		  <img src="images/about.jpg" alt="Природа" style="width:100%">
+		</div>
+		
+		<div class="mySlides fade">
+		  <img src=images/revolution-logo.png" alt="Лес" style="width:100%">
+		</div>
+		
+		<div class="mySlides fade">
+		  <img src="photo_2024-06-04_22-04-39.jpg" alt="Горы" style="width:100%">
+		</div>
+		
+		</div>
+		<br>
+		
+		<div style="text-align:center">
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		</div>
+		
+		<script>
+		var slideIndex = 0;
+		showSlides();
+		
+		function showSlides() {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("dot");
+		  for (i = 0; i < slides.length; i++) {
+		    slides[i].style.display = "none";  
+		  }
+		  slideIndex++;
+		  if (slideIndex > slides.length) {slideIndex = 1}    
+		  for (i = 0; i < dots.length; i++) {
+		    dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		  setTimeout(showSlides, 2000); // Меняйте изображение каждые 2 секунды
+		}
+		</script>
 		
 		<h1>What is Revolution Travel All About?</h1>
 		<p>People typically spend an awful lot of time just planning how to get to their destination. By the time they arrive, they need to rest a bit before they can get out and explore. By the time they return home, they need another vacation to recover before they can reflect upon how much fun they had while they were away. At Revolution Travel, our goal is to change all of that.</p>
