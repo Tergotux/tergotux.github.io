@@ -96,6 +96,12 @@ footer {
 	float: left;
 	margin-right: 15px;
 }
+.contacts__map {
+  border: 3px solid red;
+  height: 100%;
+  flex-grow: 1;
+
+}
 .img-right {
 	float: right;
 	margin-left: 15px;
