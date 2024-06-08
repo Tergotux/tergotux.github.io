@@ -82,14 +82,19 @@
 		}
 
 		async function logMovies() {
-		  const response = await fetch("https://www.youtube.com/watch?v=hbi1zfE24T8", {
-			  mode: 'no-cors',
-			  credentials: 'include',
-			  method: 'GET',
-			  headers: headers
-			});
-		  const movies = await response.json();
-		  console.log(movies);
+			await fetch(URL, {
+			    method: "POST", // "GET/POST"
+			    headers: {
+			        "Content-Type": "application/json"
+			    },
+			    body: JSON.stringify(data)
+			})
+			.then(r => r.json())
+			.then(r => {
+			   console.log('Response', r) // You will get JSON response here.
+			}).catch(error => console.error('Error', error));
+		
+
 		}
 		
 		// Thumbnail image controls
