@@ -55,6 +55,7 @@
 		
 		<script>
 		var slideIndex = 1;
+		var maxIndex = 3;
 		showSlides(slideIndex);
 		
 		// Next/previous controls
@@ -82,7 +83,30 @@
 		  slides[slideIndex-1].style.display = "block";
 		  dots[slideIndex-1].className += " active";
 
-		  setTimeout(plusSlides(1), 5000);
+		  setTimeout(showSlidesNext, 5000);
+		}
+		function showSlidesNext() {
+		  if(slideIndex < maxIndex){
+			slideIndex += 1;
+		  }
+		  else{
+			slideIndex = 1; 
+		  }
+		  var i = slideIndex;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		      dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+
+		  setTimeout(showSlidesNext, 5000);
 		}
 		</script>
 		
