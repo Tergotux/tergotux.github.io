@@ -63,6 +63,7 @@
 		
 		<script>
 		var slideIndex = 1;
+		var isStopAuto = false;
 		showSlides(slideIndex);
 		autoSlides();
 			
@@ -70,16 +71,18 @@
 		    setTimeout(nextSlide, 5000);
 		}
 		function nextSlide() {
-		  showSlides(slideIndex += 1);
+		  if(!isStopAuto) showSlides(slideIndex += 1);
 		  autoSlides();
 		}
 		// Next/previous controls
 		function plusSlides(n) {
+		  isStopAuto = true;
 		  showSlides(slideIndex += n);
 		}
 		
 		// Thumbnail image controls
 		function currentSlide(n) {
+		  isStopAuto = true;
 		  showSlides(slideIndex = n);
 		}
 		
