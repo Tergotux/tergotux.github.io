@@ -64,11 +64,13 @@
 		var slideIndex = 1;
 		showSlides(slideIndex);
 		autoSlides();
+			
 		function autoSlides(){
 		    setTimeout(nextSlide, 5000);
 		}
 		function nextSlide() {
 		  showSlides(slideIndex += 1);
+		  autoSlides();
 		}
 		// Next/previous controls
 		function plusSlides(n) {
